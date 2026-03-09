@@ -1,16 +1,29 @@
-import SearchBar from "../components/SearchBar";
-import Card from "../components/Card";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Transactions() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (!loggedIn) {
+      alert("Please login first");
+      navigate("/login");
+    }
+  }, []);
+
   return (
-    <div>
+    <div className="p-6">
 
-      <h2>Transactions</h2>
+      <h1 className="text-2xl font-bold">
+        Transactions Page
+      </h1>
 
-      <SearchBar />
-
-      <Card title="Zomato" amount="250" />
-      <Card title="Uber" amount="400" />
+      <p className="mt-4">
+        Here you can manage your expenses and income.
+      </p>
 
     </div>
   );

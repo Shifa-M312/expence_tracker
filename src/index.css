@@ -1,12 +1,1 @@
-nav {
-  display: flex;
-  gap: 20px;
-  padding: 10px;
-}
-
-.card {
-  border: 1px solid #ddd;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 8px;
-}
+@import "tailwindcss";
